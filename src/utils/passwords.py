@@ -4,7 +4,7 @@ from enum import StrEnum
 from math import log2
 from secrets import choice
 
-from .characters import DIGITS, EN_LOWERCASE, EN_UPPERCASE, EXTRA, PASSWORD_CHARS, RU
+from characters import DIGITS, EN_LOWERCASE, EN_UPPERCASE, EXTRA, PASSWORD_CHARS, RU
 
 
 class Security(StrEnum):
