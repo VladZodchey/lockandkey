@@ -36,3 +36,7 @@ I thoroughly documented & commented everything I can
 to make picking it apart a breeze.
 
 Btw, some UI solutions are shamelessly stolen from KeePassXC's beautiful interface.
+
+## AI
+
+This project used LLMs only to search up relevant information, no code snippets are AI-generated.
