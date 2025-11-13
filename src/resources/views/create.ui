@@ -6,18 +6,30 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>375</height>
+    <width>384</width>
+    <height>384</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>512</width>
+    <height>512</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Create new database...</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="iconLayout">
      <item>
-      <spacer name="horizontalSpacer">
+      <spacer name="leftSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -61,7 +73,7 @@
       </widget>
      </item>
      <item>
-      <spacer name="horizontalSpacer_2">
+      <spacer name="rightSpacer">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -130,10 +142,10 @@
    <item>
     <widget class="QLabel" name="errorLabel">
      <property name="text">
-      <string>The passwords don't match!</string>
+      <string/>
      </property>
      <property name="alignment">
-      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>

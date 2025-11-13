@@ -30,17 +30,23 @@
      <string>Database</string>
     </property>
     <widget class="QMenu" name="menuOpen_new_database">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="title">
       <string>Open new database...</string>
      </property>
-     <addaction name="actionFrom_file"/>
-     <addaction name="actionCreate_new"/>
+     <addaction name="actionOpen_database"/>
+     <addaction name="actionCreate_database"/>
     </widget>
     <addaction name="menuOpen_new_database"/>
-    <addaction name="actionSave"/>
-    <addaction name="actionLog_out"/>
+    <addaction name="actionSave_database"/>
+    <addaction name="actionLog_out_database"/>
    </widget>
    <widget class="QMenu" name="menuEntry">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Entry</string>
     </property>
@@ -54,17 +60,20 @@
      <string>About</string>
     </property>
     <addaction name="actionDocs"/>
-    <addaction name="actionSettingws"/>
+    <addaction name="actionSettings"/>
     <addaction name="actionInfo"/>
    </widget>
    <widget class="QMenu" name="menuGroup">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="title">
      <string>Group</string>
     </property>
-    <addaction name="actionCreate_new_2"/>
+    <addaction name="actionCreate_group"/>
     <addaction name="separator"/>
-    <addaction name="actionEdit_opened"/>
-    <addaction name="actionDelete_opened"/>
+    <addaction name="actionEdit_group"/>
+    <addaction name="actionDelete_group"/>
    </widget>
    <addaction name="menuDatabase"/>
    <addaction name="menuEntry"/>
@@ -87,12 +96,18 @@
     <string>Delete entry...</string>
    </property>
   </action>
-  <action name="actionSave">
+  <action name="actionSave_database">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Save</string>
    </property>
   </action>
-  <action name="actionLog_out">
+  <action name="actionLog_out_database">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>Log out</string>
    </property>
@@ -102,7 +117,7 @@
     <string>Docs</string>
    </property>
   </action>
-  <action name="actionSettingws">
+  <action name="actionSettings">
    <property name="text">
     <string>Settings</string>
    </property>
@@ -112,27 +127,27 @@
     <string>Info</string>
    </property>
   </action>
-  <action name="actionFrom_file">
+  <action name="actionOpen_database">
    <property name="text">
     <string>From file</string>
    </property>
   </action>
-  <action name="actionCreate_new">
+  <action name="actionCreate_database">
    <property name="text">
     <string>Create new</string>
    </property>
   </action>
-  <action name="actionCreate_new_2">
+  <action name="actionCreate_group">
    <property name="text">
     <string>Create new...</string>
    </property>
   </action>
-  <action name="actionDelete_opened">
+  <action name="actionDelete_group">
    <property name="text">
     <string>Delete opened...</string>
    </property>
   </action>
-  <action name="actionEdit_opened">
+  <action name="actionEdit_group">
    <property name="text">
     <string>Edit opened...</string>
    </property>
