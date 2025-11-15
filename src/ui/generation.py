@@ -16,7 +16,6 @@ from PyQt6.uic.load_ui import loadUi
 
 from ..resources import ui_path
 from ..utils.characters import DIGITS, EN_LOWERCASE, EN_UPPERCASE, EXTRA, RU_LOWERCASE, RU_UPPERCASE
-from ..utils.logger import info
 from ..utils.passwords import evaluate_password, generate_password
 from .icons import Icons
 

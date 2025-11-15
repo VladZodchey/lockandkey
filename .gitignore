@@ -11,3 +11,7 @@ wheels/
 
 # Dependency-related files
 .pytest_cache
+.ruff_cache
+
+# Workspaces
+.idea
