@@ -4,16 +4,16 @@ from enum import StrEnum
 from math import log2
 from secrets import choice
 
-from characters import DIGITS, EN_LOWERCASE, EN_UPPERCASE, EXTRA, PASSWORD_CHARS, RU
+from .characters import DIGITS, EN_LOWERCASE, EN_UPPERCASE, EXTRA, PASSWORD_CHARS, RU
 
 
 class Security(StrEnum):
     """An enum of password security evaluation."""
 
-    POOR = "poor_password"
-    WEAK = "weak_password"
-    OK = "ok_password"
-    STRONG = "strong_password"
+    POOR = "Poor"
+    WEAK = "Weak"
+    OK = "OK"
+    STRONG = "Strong!"
 
 
 def generate_password(charset: set[str] | frozenset[str] = PASSWORD_CHARS, length: int = 16) -> str:
