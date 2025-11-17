@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>384</width>
-    <height>384</height>
+    <height>256</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -90,47 +90,59 @@
    <item>
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
-      <widget class="QLabel" name="nameLabel">
+      <widget class="QLabel" name="passwordLabel">
        <property name="text">
-        <string>Give your database a name:</string>
+        <string>Choose a password:</string>
        </property>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="nameEdit">
-       <property name="placeholderText">
-        <string>Passwords</string>
-       </property>
-      </widget>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="passwordEdit">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="showButton">
+         <property name="toolTip">
+          <string>Show/hide the password</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../icons/visible.svg</normaloff>../icons/visible.svg</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item row="1" column="0">
-      <widget class="QLabel" name="passwordLabel">
-       <property name="text">
-        <string>Encrypt it with a password:</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="passwordEdit"/>
-     </item>
-     <item row="2" column="0">
       <widget class="QLabel" name="repeatLabel">
        <property name="text">
         <string>Repeat it:</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="repeatEdit"/>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="repeatEdit">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
      </item>
-     <item row="3" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="browseLabel">
        <property name="text">
         <string>Choose a file path:</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="2" column="1">
       <widget class="QPushButton" name="browseButton">
        <property name="text">
         <string>Browse...</string>
@@ -138,6 +150,19 @@
       </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="pathLabel">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="errorLabel">

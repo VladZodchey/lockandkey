@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Dialog</class>
  <widget class="QDialog" name="Dialog">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Entry creation...</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -43,18 +46,30 @@
         </widget>
        </item>
        <item>
-        <widget class="QToolButton" name="showPasswordButton">
+        <widget class="QToolButton" name="showButton">
+         <property name="toolTip">
+          <string>Show/hide the password</string>
+         </property>
          <property name="text">
           <string/>
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../icons/invisible.svg</normaloff>../icons/invisible.svg</iconset>
+           <normaloff>../icons/visible.svg</normaloff>../icons/visible.svg</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>16</width>
+           <height>16</height>
+          </size>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QToolButton" name="genPasswordButton">
+        <widget class="QToolButton" name="generateButton">
+         <property name="toolTip">
+          <string>Generate a secure password...</string>
+         </property>
          <property name="text">
           <string>...</string>
          </property>
@@ -98,9 +113,20 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QComboBox" name="groupCombo"/>
+      <widget class="QComboBox" name="groupCombo">
+       <property name="placeholderText">
+        <string>None</string>
+       </property>
+      </widget>
      </item>
     </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="errorLabel">
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">

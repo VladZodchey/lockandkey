@@ -11,11 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Password generation...</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <layout class="QHBoxLayout" name="inputLaout">
      <item>
       <widget class="QLineEdit" name="passwordEdit"/>
      </item>
@@ -50,7 +50,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <layout class="QHBoxLayout" name="entropyLaout">
      <item>
       <widget class="QLabel" name="entropyLabel">
        <property name="text">
@@ -88,7 +88,7 @@
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <layout class="QHBoxLayout" name="setLayout">
          <item>
           <widget class="QLabel" name="symbolLabel">
            <property name="text">
@@ -101,6 +101,9 @@
            <property name="text">
             <string>a-z</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
            <attribute name="buttonGroup">
             <string notr="true">symbolPick</string>
            </attribute>
@@ -110,6 +113,9 @@
           <widget class="QCheckBox" name="enUpperCheck">
            <property name="text">
             <string>A-Z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">symbolPick</string>
@@ -121,6 +127,9 @@
            <property name="text">
             <string>0-9</string>
            </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
            <attribute name="buttonGroup">
             <string notr="true">symbolPick</string>
            </attribute>
@@ -130,6 +139,9 @@
           <widget class="QCheckBox" name="specialCheck">
            <property name="text">
             <string>-_$&amp;!?...</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
            </property>
            <attribute name="buttonGroup">
             <string notr="true">symbolPick</string>
@@ -159,7 +171,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="lengthLayout">
          <item>
           <widget class="QLabel" name="lengthLabel">
            <property name="text">
@@ -182,7 +194,7 @@
             <number>4</number>
            </property>
            <property name="value">
-            <number>8</number>
+            <number>16</number>
            </property>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -196,12 +208,15 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="lengthSpinBox">
+          <widget class="QSpinBox" name="lengthSpin">
            <property name="minimum">
             <number>4</number>
            </property>
            <property name="maximum">
             <number>64</number>
+           </property>
+           <property name="value">
+            <number>16</number>
            </property>
           </widget>
          </item>
@@ -223,6 +238,10 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="symbolPick"/>
+  <buttongroup name="symbolPick">
+   <property name="exclusive">
+    <bool>false</bool>
+   </property>
+  </buttongroup>
  </buttongroups>
 </ui>
