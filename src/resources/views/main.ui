@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>533</width>
+    <height>462</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lock And Key</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>533</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatabase">
+    <property name="title">
+     <string>Database</string>
+    </property>
+    <widget class="QMenu" name="menuOpen_new_database">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>Open new database...</string>
+     </property>
+     <addaction name="actionOpen_database"/>
+     <addaction name="actionCreate_database"/>
+    </widget>
+    <addaction name="menuOpen_new_database"/>
+    <addaction name="actionSave_database"/>
+    <addaction name="actionLock_database"/>
+    <addaction name="separator"/>
+    <addaction name="actionDump"/>
+    <addaction name="actionRestore"/>
+   </widget>
+   <widget class="QMenu" name="menuEntry">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Entry</string>
+    </property>
+    <addaction name="actionCreate_entry"/>
+    <addaction name="separator"/>
+    <addaction name="actionEdit_entry"/>
+    <addaction name="actionDelete_entry"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionDocs"/>
+    <addaction name="actionSettings"/>
+    <addaction name="actionInfo"/>
+   </widget>
+   <widget class="QMenu" name="menuGroup">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Group</string>
+    </property>
+    <addaction name="actionCreate_group"/>
+    <addaction name="separator"/>
+    <addaction name="actionEdit_group"/>
+    <addaction name="actionDelete_group"/>
+   </widget>
+   <addaction name="menuDatabase"/>
+   <addaction name="menuEntry"/>
+   <addaction name="menuGroup"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCreate_entry">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Create entry...</string>
+   </property>
+  </action>
+  <action name="actionEdit_entry">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Edit entry...</string>
+   </property>
+  </action>
+  <action name="actionDelete_entry">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Delete entry...</string>
+   </property>
+  </action>
+  <action name="actionSave_database">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionLock_database">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Log out</string>
+   </property>
+  </action>
+  <action name="actionDocs">
+   <property name="text">
+    <string>Docs</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+  </action>
+  <action name="actionOpen_database">
+   <property name="text">
+    <string>From file</string>
+   </property>
+  </action>
+  <action name="actionCreate_database">
+   <property name="text">
+    <string>Create new</string>
+   </property>
+  </action>
+  <action name="actionCreate_group">
+   <property name="text">
+    <string>Create new...</string>
+   </property>
+  </action>
+  <action name="actionDelete_group">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Delete opened...</string>
+   </property>
+  </action>
+  <action name="actionEdit_group">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Edit opened...</string>
+   </property>
+  </action>
+  <action name="actionDump">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Dump to CSV...</string>
+   </property>
+  </action>
+  <action name="actionRestore">
+   <property name="text">
+    <string>Restore from CSV...</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

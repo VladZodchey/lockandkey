@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>442</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Password generation...</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="inputLaout">
+     <item>
+      <widget class="QLineEdit" name="passwordEdit"/>
+     </item>
+     <item>
+      <widget class="QToolButton" name="regenerateButton">
+       <property name="toolTip">
+        <string>Regenerate password</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../icons/replay.svg</normaloff>../icons/replay.svg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="copyButton">
+       <property name="toolTip">
+        <string>Copy password</string>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../icons/copy.svg</normaloff>../icons/copy.svg</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="entropyLaout">
+     <item>
+      <widget class="QLabel" name="entropyLabel">
+       <property name="text">
+        <string>Entropy:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="entropyLevel">
+       <property name="value">
+        <number>100</number>
+       </property>
+       <property name="format">
+        <string>%p</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="entropyLevelLabel">
+       <property name="text">
+        <string>(Strong)</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="passwordTab">
+      <attribute name="title">
+       <string>Password</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="setLayout">
+         <item>
+          <widget class="QLabel" name="symbolLabel">
+           <property name="text">
+            <string>Symbol Set:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="enLowerCheck">
+           <property name="text">
+            <string>a-z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">symbolPick</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="enUpperCheck">
+           <property name="text">
+            <string>A-Z</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">symbolPick</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="digitsCheck">
+           <property name="text">
+            <string>0-9</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">symbolPick</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="specialCheck">
+           <property name="text">
+            <string>-_$&amp;!?...</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">symbolPick</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="ruLowerCheck">
+           <property name="text">
+            <string>а-я</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">symbolPick</string>
+           </attribute>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="ruUpperCheck">
+           <property name="text">
+            <string>А-Я</string>
+           </property>
+           <attribute name="buttonGroup">
+            <string notr="true">symbolPick</string>
+           </attribute>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="lengthLayout">
+         <item>
+          <widget class="QLabel" name="lengthLabel">
+           <property name="text">
+            <string>Length:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="lengthSlider">
+           <property name="minimum">
+            <number>4</number>
+           </property>
+           <property name="maximum">
+            <number>64</number>
+           </property>
+           <property name="singleStep">
+            <number>2</number>
+           </property>
+           <property name="pageStep">
+            <number>4</number>
+           </property>
+           <property name="value">
+            <number>16</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::TicksBelow</enum>
+           </property>
+           <property name="tickInterval">
+            <number>4</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="lengthSpin">
+           <property name="minimum">
+            <number>4</number>
+           </property>
+           <property name="maximum">
+            <number>64</number>
+           </property>
+           <property name="value">
+            <number>16</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="symbolPick">
+   <property name="exclusive">
+    <bool>false</bool>
+   </property>
+  </buttongroup>
+ </buttongroups>
+</ui>
