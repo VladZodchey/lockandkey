@@ -2,10 +2,10 @@
 
 ## Features
 
-- [ ] Create the application itself
+- [x] Create the application itself
 - [ ] Write a comprehensive build workflow
 - [ ] Add theme picking
-- [ ] Add DB encryption
+- [x] Add DB encryption
 - [ ] Add tests
 - [ ] Add secret sharing via HTTP(S)
 - [ ] Make it a NixOS flake (later...)
@@ -13,7 +13,7 @@
 
 ## MVP requirements
 
-- [ ] Creating, editing, deleting secrets
-- [ ] Creating, assigning, deleting groups
-- [ ] Language switching
+- [x] Creating, editing, deleting secrets
+- [x] Creating, assigning, deleting groups
+- [x] Language switching
 - [ ] Logging
