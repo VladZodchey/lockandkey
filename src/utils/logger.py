@@ -29,7 +29,7 @@ class Logger:
         )
         stream_handler.setLevel(logging.INFO)
         self.logger.addHandler(stream_handler)
-        self.logger.info("Initialized instance")
+        self.logger.info("Initialized the logging singleton")
 
 
 _logger_instance: Logger | None = None

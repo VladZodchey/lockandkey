@@ -19,3 +19,8 @@ def ui_path(filename: str) -> str:
 def icon_path(filename: str) -> str:
     """Macro for icon resolvement."""
     return str(path("icons", filename))
+
+
+def tr_path(locale_name: str) -> str:
+    """Macro for locale resolvement."""
+    return str(path("translations", locale_name))
