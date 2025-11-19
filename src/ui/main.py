@@ -1,6 +1,8 @@
 """The main window spawn class and load up of Greeting or Table classes."""
 
-from PyQt6.QtCore import QSettings, QUrl
+from contextlib import suppress
+
+from PyQt6.QtCore import QSettings, QUrl, pyqtSignal
 from PyQt6.QtGui import QAction, QDesktopServices
 from PyQt6.QtWidgets import QDialog, QFileDialog, QMainWindow, QMenu, QMessageBox
 from PyQt6.uic.load_ui import loadUi
@@ -22,6 +24,8 @@ from .unlocking import UnlockingDialog
 
 class MainWindow(QMainWindow):
     """The main application window. Without a nested widget, it only provides the menu bar."""
+
+    external_update = pyqtSignal()
 
     def __init__(self) -> None:
         """Spawn the MainWindow."""
@@ -132,18 +136,22 @@ class MainWindow(QMainWindow):
 
     def reveal_secrets(self) -> None:
         """Change the greet widget to a secrets table widget and populate it."""
-        self.secrets = SecretsWidget(self)
-        self.secrets.changed.connect(self._update_save_state)
+        secrets = SecretsWidget(self)
+        secrets.changed.connect(self._update_save_state)
+        self.external_update.connect(secrets.display)
+        self.external_update.connect(secrets.update_groups)
         self.actionLock_database.setEnabled(True)
         self.actionDump.setEnabled(True)
         self.actionRestore.setEnabled(True)
         self.menuEntry.setEnabled(True)
         self.menuGroup.setEnabled(True)
-        self.setCentralWidget(self.secrets)
+        self.setCentralWidget(secrets)
 
     def greet(self) -> None:
         """Change the secrets table widget/empty widget to a greet widget."""
         greeting = GreetingsWidget(self)
+        with suppress(TypeError):
+            self.external_update.disconnect()
         self.setCentralWidget(greeting)
         self.actionSave_database.setEnabled(False)
         self.actionLock_database.setEnabled(False)
@@ -168,11 +176,12 @@ class MainWindow(QMainWindow):
 
     def lock_db(self) -> None:
         """Save data and log out of the current database."""
-        self.save_db()
+        if self.glue is not None:
+            self.save_db()
+            self.glue.close()
+            self.glue = None
         self.cred = None
-        self.glue = None
         self.update_title()
-        self.secrets = None
         self.greet()
 
     def closeEvent(self, a0):  # noqa: N802
@@ -246,7 +255,5 @@ class MainWindow(QMainWindow):
             return
         restore_from_file(self.glue, inp)
         QMessageBox.information(self, self.tr("Success"), f"{self.tr('Restored from ')} {inp}")
+        self.external_update.emit()
         self._update_save_state()
-        if self.secrets is not None:
-            self.secrets.display()
-            self.secrets.update_groups()
